@@ -1,0 +1,24 @@
+
+apiVersion: v1
+kind: Pod 
+metadata:
+  name: pod3
+  labels:
+    app: pod3
+spec: 
+  affinity:
+    podAntiAffinity:
+     # Hard constraint: Pod will NOT be scheduled if the rule isn't met
+      requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - pod1
+            - pod2
+        topologyKey: "topology.kubernetes.io/zone"
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: Always

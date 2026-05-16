@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: taints-tolerations-demo
+  labels:
+    purpose: taints-tolerations
+    project: roboshop 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      purpose: taints-tolerations
+      project: roboshop
+  template:
+    metadata:
+      labels:
+        purpose: taints-tolerations
+        project: roboshop
+    spec:
+      nodeSelector:
+      containers:
+      - name: nginx
+        image: nginx:latest
+      tolerations:
+      - key: "project"
+        operator: "Equal"
+        value: "roboshop"
+        effect: "NoSchedule"
