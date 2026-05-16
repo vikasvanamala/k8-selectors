@@ -22,21 +22,21 @@ spec:
             values:
             - us-east-1b
   # soft rule
-      preferredDuringSchedulingIgnoredDuringExecution:
-      - weight: 1
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - amazon
-      - weight: 10
-        preference:
-          matchExpressions:
-          - key: project
-            operator: In
-            values:
-            - roboshop
+      # preferredDuringSchedulingIgnoredDuringExecution:
+      # - weight: 1
+      #   preference:
+      #     matchExpressions:
+      #     - key: project
+      #       operator: In
+      #       values:
+      #       - amazon
+      # - weight: 10
+      #   preference:
+      #     matchExpressions:
+      #     - key: project
+      #       operator: In
+      #       values:
+      #       - roboshop
   containers:
   - name: nginx
     image: nginx:latest
