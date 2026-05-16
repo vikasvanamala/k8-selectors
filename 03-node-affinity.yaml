@@ -12,7 +12,7 @@ spec:
       requiredDuringSchedulingIgnoredDuringExecution:
         nodeSelectorTerms:
         - matchExpressions:
-          - key: node.kubernetes.io/instance-typ
+          - key: node.kubernetes.io/instance-type
             operator: In
             values:
             - m7i-flex.large
