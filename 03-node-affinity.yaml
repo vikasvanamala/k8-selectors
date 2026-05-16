@@ -26,10 +26,10 @@ spec:
       - weight: 1
         preference:
           matchExpressions:
-          - key: project
+          - key: topology.kubernetes.io/zone
             operator: In
             values:
-            - amazon
+            - us-east-1b
       - weight: 10
         preference:
           matchExpressions:
