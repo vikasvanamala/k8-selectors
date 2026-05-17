@@ -23,7 +23,7 @@ spec:
       - labelSelector:
           matchExpressions:
           - key: app
-            operator: NotIn
+            operator: In
             values:
             - pod1
         topologyKey: "topology.kubernetes.io/zone"

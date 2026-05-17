@@ -18,11 +18,11 @@ spec:
      # Hard constraint: Pod will NOT be scheduled if the rule isn't met
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - store
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - store
             topologyKey: "topology.kubernetes.io/zone"
       containers:
       - name: redis-server
@@ -47,20 +47,20 @@ spec:
      # Hard constraint: Pod will NOT be scheduled if the rule isn't met
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - web-store
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - web-store
             topologyKey: "topology.kubernetes.io/zone"
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
             matchExpressions:
-            - key: app
-              operator: In
-              values:
-              - store
+              - key: app
+                operator: In
+                values:
+                - store
             topologyKey: "topology.kubernetes.io/zone"
       containers:
       - name: web-app
