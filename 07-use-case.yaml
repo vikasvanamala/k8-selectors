@@ -56,11 +56,11 @@ spec:
         podAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
-            matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - store
+              matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - store
             topologyKey: "topology.kubernetes.io/zone"
       containers:
       - name: web-app
